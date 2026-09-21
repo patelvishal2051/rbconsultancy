@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>R.B Foods &amp; Management Consultancy. Food business consulting, concept to grand opening.</title>
+<meta name="description" content="Rahul Bajpai builds restaurants, cafes, cloud kitchens and QSR outlets in 45 days, then runs your floor with you for two months after opening. Zero royalty, zero convenience fee, no hidden charges.">
+<meta name="theme-color" content="#131B20">
+<meta property="og:type" content="website">
+<meta property="og:title" content="R.B Foods &amp; Management Consultancy">
+<meta property="og:description" content="45 days from empty shell to grand opening. Then two months of operations run with you.">
+<meta property="og:url" content="https://patelvishal2051.github.io/rbconsultancy/">
+<meta property="og:image" content="https://patelvishal2051.github.io/rbconsultancy/assets/ending.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23131B20'/%3E%3Cpath d='M9 24V8h7a5 5 0 0 1 0 10H9m7 0 6 6' stroke='%23CF9045' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@110..125,600..700&family=Martian+Mono:wdth,wght@100,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,300&display=swap">
+<style>
+:root{
+  /* Every value sampled from assets/hero.mp4 after the video gate. See design-package.md section 2. */
+  --canvas:#131B20;
+  --canvas-deep:#0C1215;
+  --panel:#1C262C;
+  --line:#2B373E;
+  --line-strong:#3E4E56;
+  --daylight:#9DAAB0;
+  --accent:#CF9045;
+  --accent-hover:#E8A355;
+  --accent-muted:#6A4A26;
+  --text-primary:#EAE6DF;
+  --text-secondary:#A2AFB4;
+
+  --display:"Archivo",system-ui,sans-serif;
+  --body:"Newsreader",Georgia,serif;
+  --mono:"Martian Mono",ui-monospace,monospace;
+
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --ease-soft:cubic-bezier(.4,0,.2,1);
+
+  --tshadow:0 1px 2px rgba(5,8,10,.95),0 3px 12px rgba(5,8,10,.78),0 10px 44px rgba(5,8,10,.8);
+  --gutter:clamp(20px,5vw,72px);
+  --rail:clamp(20px,5vw,72px);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden;overflow-x:clip}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--canvas);color:var(--text-primary);
+  font-family:var(--body);font-size:clamp(16px,1.05vw,18px);line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img,video,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:700;font-variation-settings:"wdth" 118;line-height:.98;margin:0;letter-spacing:-.015em}
+p{margin:0}
+button,input,select,textarea{font:inherit;color:inherit}
+
+/* One environment behind everything */
+.ambient{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 70% 50% at 18% 12%,rgba(157,170,176,.055),transparent 70%),
+    radial-gradient(ellipse 60% 45% at 85% 78%,rgba(207,144,69,.05),transparent 70%);
+  animation:ambientDrift 96s var(--ease-soft) -24s infinite alternate}
+@keyframes ambientDrift{from{transform:translate3d(-1.5%,-1%,0) scale(1.03)}to{transform:translate3d(1.5%,1.5%,0) scale(1.09)}}
+
+.skip{position:absolute;left:-9999px;top:0;z-index:200;background:var(--accent);color:#14100B;
+  padding:.7rem 1.1rem;border-radius:0 0 8px 0;font-family:var(--mono);font-size:11px}
+.skip:focus{left:0}
+
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+.wrap{max-width:1360px;margin:0 auto;padding-inline:var(--gutter)}
+
+/* ---------- header ---------- */
+.hdr{position:fixed;inset-inline:0;top:0;z-index:60;border-bottom:1px solid var(--line);
+  background:rgba(14,20,22,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.hdr-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:66px;
+  max-width:1360px;margin:0 auto;padding-inline:var(--gutter)}
+.mark{display:flex;align-items:baseline;gap:.55rem;text-decoration:none}
+.mark b{font-family:var(--display);font-weight:700;font-variation-settings:"wdth" 122;font-size:19px;color:var(--accent);letter-spacing:.02em}
+.mark span{font-family:var(--mono);font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--text-secondary)}
+@media (max-width:720px){.mark span{display:none}}
+.nav{display:none;align-items:center;gap:1.6rem}
+.nav a{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--text-secondary);text-decoration:none;transition:color .35s var(--ease)}
+.nav a:hover{color:var(--accent)}
+@media (min-width:1080px){.nav{display:flex}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  text-decoration:none;border-radius:999px;padding:.72rem 1.3rem;border:1px solid var(--accent);
+  color:var(--accent);background:transparent;cursor:pointer;white-space:nowrap;
+  transition:background .4s var(--ease),color .4s var(--ease),border-color .4s var(--ease),transform .4s var(--ease)}
+.btn:hover{background:var(--accent);color:#14100B;transform:translateY(-1px)}
+.btn-solid{background:var(--accent);color:#14100B}
+.btn-solid:hover{background:var(--accent-hover);border-color:var(--accent-hover)}
+.btn-lg{padding:1.05rem 2rem;font-size:12px}
+.btn-quiet{border-color:var(--line-strong);color:var(--text-secondary)}
+.btn-quiet:hover{background:transparent;border-color:var(--daylight);color:var(--daylight)}
+@media (pointer:coarse){.btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center}}
+/* Below this the mark and the header button both wrap onto two lines and the
+   bar grows a chin, so the qualifier goes and the button tightens. */
+@media (max-width:560px){
+  .mark span{display:none}
+  .hdr .btn{padding:.62rem .95rem;font-size:10px;letter-spacing:.12em;white-space:nowrap}
+}
+
+/* ---------- hero ---------- */
+.hero{position:relative;height:1100vh;background:var(--canvas-deep);z-index:1}
+.stage{position:sticky;top:0;height:100svh;overflow:hidden;background:var(--canvas-deep)}
+.poster{position:absolute;inset:0;background-size:cover;background-position:center;
+  transition:opacity 1s var(--ease-soft)}
+.stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:0;transition:opacity .9s var(--ease-soft);will-change:transform;transform:translateZ(0)}
+.stage.video-ready video{opacity:1}
+.stage.video-ready .poster{opacity:0}
+/* Layer one of the legibility system. The lane gradient is the load bearing
+   part: the film turns bright exactly where the captions sit, because the sun
+   lands on the left hand wall, so the caption lane is darkened across its whole
+   width and released before the action lane in the centre and right. */
+.scrim{position:absolute;inset:0;pointer-events:none;
+  background:
+    linear-gradient(to right,rgba(6,10,13,.88) 0%,rgba(6,10,13,.78) 26%,rgba(6,10,13,.52) 42%,rgba(6,10,13,.16) 58%,rgba(6,10,13,0) 70%),
+    radial-gradient(ellipse 120% 92% at 56% 46%,rgba(8,13,16,0) 30%,rgba(8,13,16,.66) 100%)}
+.vignette{position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to bottom,rgba(8,13,16,.72) 0%,rgba(8,13,16,0) 22%,rgba(8,13,16,0) 74%,rgba(8,13,16,.8) 100%)}
+
+.ring{position:absolute;right:calc(var(--gutter) + 2px);bottom:calc(var(--gutter) + 2px);
+  width:40px;height:40px;color:var(--daylight);opacity:.85}
+.ring circle{transform:rotate(-90deg);transform-origin:50% 50%;transition:stroke-dashoffset .18s linear}
+.cue{position:absolute;right:var(--gutter);bottom:var(--gutter);display:grid;gap:.4rem;justify-items:center;
+  font-family:var(--mono);font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--text-secondary)}
+.cue i{display:block;width:1px;height:34px;background:linear-gradient(to bottom,transparent,var(--daylight));
+  animation:cueDrop 2.6s var(--ease-soft) -.6s infinite}
+@keyframes cueDrop{0%,100%{transform:scaleY(.5);transform-origin:top;opacity:.4}50%{transform:scaleY(1);opacity:1}}
+
+.bands{position:absolute;inset:0;pointer-events:none}
+.band{position:absolute;left:var(--gutter);top:50%;transform:translateY(-50%);
+  width:min(46ch,44vw);opacity:0;text-shadow:var(--tshadow)}
+/* Layer two, riding the band's own k so it arrives with the words.
+   The radii are deliberately smaller than the distance from the centre to the
+   right, top and bottom edges of this box, so the gradient is already fully
+   transparent by the time it reaches them. Size them any larger and the box
+   clips a still-opaque gradient, which paints a visible rectangle over the
+   film. The left edge sits off screen at every width the scrub hero runs at. */
+.band::before{content:"";position:absolute;inset:-18% -28% -18% -40%;pointer-events:none;z-index:-1;
+  opacity:calc(.3 + .7*var(--k,1));
+  background:radial-gradient(ellipse 54% 48% at 44% 50%,rgba(3,6,8,.82) 0%,rgba(3,6,8,.60) 46%,rgba(3,6,8,0) 100%)}
+.band .kick{font-family:var(--mono);font-size:10px;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:1.1rem}
+.band h1{font-size:clamp(2.6rem,6.4vw,5.6rem)}
+.band h2{font-size:clamp(2.2rem,5.4vw,4.6rem)}
+.band .lede{font-size:clamp(1.05rem,1.5vw,1.3rem);color:var(--text-primary);margin-top:1.2rem;max-width:34ch}
+.band .beat{font-family:var(--display);font-weight:600;font-variation-settings:"wdth" 112;
+  font-size:clamp(1.5rem,2.9vw,2.5rem);line-height:1.14;letter-spacing:-.01em}
+.band .day{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--daylight);display:block;margin-bottom:.9rem}
+.band .cta{margin-top:1.8rem;display:flex;flex-wrap:wrap;gap:.7rem;pointer-events:auto}
+.band .btn{text-shadow:none}
+
+/* split-text primitives, transform and opacity only */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.w{display:inline-block;white-space:pre}
+.c{display:inline-block;will-change:transform,opacity}
+
+.e-drift .w{--kc:clamp(0,(var(--k,0) - var(--th,0))*2.8,1);opacity:var(--kc);
+  transform:translateY(calc((1 - var(--kc)) * -26px))}
+.e-scatter .c{--kc:clamp(0,(var(--k,0) - var(--th,0))*2.6,1);opacity:var(--kc);
+  transform:translate(calc((1 - var(--kc))*var(--jx,0px)),calc((1 - var(--kc))*var(--jy,0px))) rotate(calc((1 - var(--kc))*var(--jr,0deg)))}
+.e-grid .c{--kc:clamp(0,(var(--k,0) - var(--th,0))*3,1);opacity:var(--kc);
+  transform:translateX(calc((1 - var(--kc))*var(--jx,0px)))}
+.e-weave .c{--kc:clamp(0,(var(--k,0) - var(--th,0))*2.6,1);opacity:var(--kc);
+  transform:translateY(calc((1 - var(--kc))*var(--jy,0px)))}
+.e-punch .w{--kc:clamp(0,(var(--k,0) - var(--th,0))*3,1);
+  --ks:clamp(0,(var(--k,0) - var(--th,0) - var(--sd,.1))*var(--ss,3.2),1);opacity:var(--kc);
+  transform:scale(calc(.62 + (.38 + var(--ov,.12))*var(--kc) - var(--ov,.12)*var(--ks)))}
+.e-punch .w.em{--ov:.24;--sd:.16;--ss:2.6}
+.e-depth .line{--kc:clamp(0,var(--k,0)*1.25,1);opacity:var(--kc);
+  transform:scale(calc(.84 + .16*var(--kc)));transform-origin:0% 50%}
+.e-blur{position:relative}
+.e-blur .soft{position:absolute;inset:0;filter:blur(11px);opacity:calc(1 - var(--k,0));pointer-events:none}
+.e-blur .sharp{opacity:var(--k,0)}
+.e-rise .w{--kc:clamp(0,(var(--k,0) - var(--th,0))*3,1);opacity:var(--kc);
+  transform:translateY(calc((1 - var(--kc))*28px))}
+.e-rise .lede{--ks:clamp(0,(var(--k,0) - .66)*4,1);opacity:var(--ks);
+  transform:translateY(calc((1 - var(--ks))*14px))}
+.e-rise .cta{--kb:clamp(0,(var(--k,0) - .78)*5,1);opacity:var(--kb);
+  transform:translateY(calc((1 - var(--kb))*14px))}
+
+/* dust */
+.dust{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.dust i{position:absolute;width:2px;height:2px;border-radius:50%;background:var(--daylight);opacity:.1}
+.play .dust i{animation:mote 46s linear infinite}
+@keyframes mote{from{transform:translate3d(0,-12vh,0)}to{transform:translate3d(26px,112vh,0)}}
+
+/* static hero */
+.static-hero{display:none;position:relative;min-height:100svh;background:var(--canvas-deep);
+  background-size:cover;background-position:center;align-items:flex-end}
+.static-hero::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(8,13,16,.76) 0%,rgba(8,13,16,.34) 34%,rgba(8,13,16,.92) 100%)}
+.static-in{position:relative;z-index:2;padding:8rem var(--gutter) 3.4rem;width:100%;max-width:1360px;margin:0 auto}
+.static-in .kick{font-family:var(--mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
+.static-in h1{font-size:clamp(2.35rem,10vw,4rem);text-shadow:var(--tshadow)}
+.static-in p{margin-top:1.1rem;max-width:36ch;color:var(--text-primary);text-shadow:var(--tshadow)}
+.static-in .cta{margin-top:1.8rem;display:flex;flex-wrap:wrap;gap:.7rem}
+
+/* the five static-hero gates, identical strings in CSS and JS */
+@media (max-width:720px),
+       (orientation:portrait) and (max-width:1024px),
+       (orientation:portrait) and (pointer:coarse),
+       (orientation:landscape) and (pointer:coarse) and (max-height:560px),
+       (prefers-reduced-motion:reduce){
+  .hero{display:none}
+  .static-hero{display:flex}
+}
+@media (max-height:560px){.cue,.ring{display:none}}
+
+/* ---------- the spine ---------- */
+.lower{position:relative;z-index:2;background:var(--canvas)}
+/* Above the sections, not behind them. The panels that carry their own
+   background would otherwise cut the line into pieces, and an unbroken line is
+   the whole point of it. Nothing reaches the rail, so it never covers copy. */
+.spine{position:absolute;left:var(--rail);top:0;bottom:0;width:2px;pointer-events:none;z-index:5}
+.spine .base{position:absolute;inset:0;background:var(--line)}
+.spine .draw{position:absolute;left:0;top:0;width:2px;height:100%;transform-origin:top;
+  transform:scaleY(var(--sp,0));
+  background:linear-gradient(to bottom,var(--daylight) 0%,#B09A7B 46%,var(--accent) 100%)}
+.daymark{position:absolute;left:calc(var(--rail) - 8px);display:flex;align-items:center;gap:.55rem;
+  font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--text-secondary);
+  transition:color .7s var(--ease);z-index:6;pointer-events:none;white-space:nowrap}
+.daymark::before{content:"";width:18px;height:1px;background:var(--line-strong);transition:background .7s var(--ease)}
+@media (max-width:860px){.daymark{gap:.4rem}.daymark::before{width:11px}}
+.daymark.lit{color:var(--accent)}
+.daymark.lit::before{background:var(--accent)}
+
+section{position:relative;z-index:2}
+.pad{padding-block:clamp(5rem,11vh,9rem)}
+.kick{font-family:var(--mono);font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--accent)}
+.kick-quiet{color:var(--daylight)}
+.h2{font-size:clamp(2rem,4.4vw,3.5rem)}
+.lede{color:var(--text-secondary);font-size:clamp(1.02rem,1.25vw,1.15rem)}
+.indent{padding-left:clamp(2.2rem,5.2vw,4.6rem)}
+
+/* entrances */
+.rev{opacity:0;transform:translateY(20px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.rev.in{opacity:1;transform:none}
+.stagger>*{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.stagger.in>*{opacity:1;transform:none}
+.stagger.in>*:nth-child(1){transition-delay:0s}
+.stagger.in>*:nth-child(2){transition-delay:.09s}
+.stagger.in>*:nth-child(3){transition-delay:.18s}
+.stagger.in>*:nth-child(4){transition-delay:.27s}
+.stagger.in>*:nth-child(5){transition-delay:.36s}
+.stagger.in>*:nth-child(6){transition-delay:.45s}
+.stagger.in>*:nth-child(7){transition-delay:.54s}
+/* retire the delays so later hovers never lag; specificity matches the rules above */
+.stagger.done>*:nth-child(n){transition-delay:0s}
+
+.drawline{height:1px;background:var(--line);transform:scaleX(0);transform-origin:left;
+  transition:transform 1.1s var(--ease)}
+.in .drawline,.drawline.in{transform:scaleX(1)}
+
+/* ---------- settle + ticker ---------- */
+.ticker{border-block:1px solid var(--line);overflow:hidden;background:var(--canvas-deep)}
+.ticker-track{display:flex;width:max-content;animation:slide 44s linear infinite}
+.ticker-track span{font-family:var(--mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--daylight);padding:1rem 2.2rem;white-space:nowrap}
+.ticker-track span em{font-style:normal;color:var(--accent)}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.settle{text-align:left}
+.settle p{max-width:58ch;font-size:clamp(1.15rem,1.7vw,1.5rem);line-height:1.55}
+
+/* ---------- four beats ---------- */
+.beats{display:grid;gap:2.4rem}
+@media (min-width:900px){.beats{grid-template-columns:repeat(4,1fr);gap:1.6rem}}
+.beat-item{position:relative;padding-top:2.2rem}
+.beat-item .stem{position:absolute;top:0;left:0;width:1px;height:1.5rem;background:var(--line-strong);
+  transform:scaleY(0);transform-origin:top;transition:transform .8s var(--ease) .1s}
+.in .beat-item .stem{transform:scaleY(1)}
+.beat-item .n{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--accent)}
+.beat-item h3{font-size:clamp(1.3rem,2vw,1.7rem);margin:.7rem 0 .55rem;font-variation-settings:"wdth" 112}
+.beat-item p{color:var(--text-secondary);font-size:.98rem;max-width:26ch}
+
+/* ---------- about ---------- */
+.about{display:grid;gap:2.6rem;align-items:center}
+@media (min-width:1000px){.about{grid-template-columns:.86fr 1.14fr;gap:clamp(2.5rem,5vw,5rem)}}
+.portrait{position:relative;aspect-ratio:4/5;background:var(--panel) center/cover no-repeat;overflow:hidden}
+.portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(200deg,rgba(8,13,16,.1),rgba(8,13,16,.86))}
+.portrait .name{position:absolute;z-index:2;left:1.4rem;right:1.4rem;bottom:1.3rem;
+  font-family:var(--display);font-weight:700;font-variation-settings:"wdth" 124;
+  font-size:clamp(2rem,4vw,3.1rem);line-height:.9;text-shadow:var(--tshadow)}
+.portrait .role{position:absolute;z-index:2;left:1.4rem;top:1.3rem;font-family:var(--mono);
+  font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
+.creds{margin-top:2.4rem;display:grid;gap:0}
+@media (min-width:640px){.creds{grid-template-columns:1fr 1fr}}
+.cred{padding:1.15rem 0;border-top:1px solid var(--line)}
+.cred b{display:block;font-family:var(--display);font-weight:600;font-variation-settings:"wdth" 112;font-size:1.12rem}
+.cred span{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-secondary)}
+.yrs{display:flex;align-items:baseline;gap:.6rem;margin-top:2rem}
+.yrs b{font-family:var(--display);font-weight:700;font-variation-settings:"wdth" 124;
+  font-size:clamp(3.2rem,7vw,5rem);line-height:.85;color:var(--accent)}
+.yrs span{font-family:var(--mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--text-secondary)}
+
+/* ---------- roadmap ---------- */
+.phases{margin-top:3.4rem;display:grid;gap:0}
+.phase{position:relative;padding:2.1rem 0;border-top:1px solid var(--line);
+  display:grid;gap:.5rem}
+@media (min-width:860px){
+  .phase{grid-template-columns:13rem 1fr;gap:2.4rem;align-items:start}
+  .phase:nth-child(2){margin-left:1.6rem}
+  .phase:nth-child(3){margin-left:3.2rem}
+  .phase:nth-child(4){margin-left:4.8rem}
+}
+.phase .when{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--daylight)}
+.phase h3{font-size:clamp(1.35rem,2.3vw,1.95rem);font-variation-settings:"wdth" 112;margin-bottom:.6rem}
+.phase p{color:var(--text-secondary);max-width:54ch}
+.road-still{margin-top:3rem;aspect-ratio:16/7;background:var(--panel) center/cover no-repeat;position:relative}
+.road-still::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(8,13,16,.7),rgba(8,13,16,.12))}
+
+/* ---------- five ways, the cascade ---------- */
+.ways{display:grid;gap:1.1rem;margin-top:3rem}
+.way{position:relative;border:1px solid var(--line);background:var(--panel);
+  padding:1.7rem clamp(1.3rem,3vw,2.4rem);display:grid;gap:.5rem;
+  transition:border-color .5s var(--ease),transform .5s var(--ease),background .5s var(--ease)}
+.way:hover{border-color:var(--accent-muted);transform:translateX(6px);background:#202B31}
+@media (min-width:900px){
+  .way{max-width:70%}
+  .way:nth-child(2){margin-left:7%}
+  .way:nth-child(3){margin-left:14%}
+  .way:nth-child(4){margin-left:21%}
+  .way:nth-child(5){margin-left:28%}
+}
+.way .n{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--accent)}
+.way h3{font-size:clamp(1.25rem,2.1vw,1.7rem);font-variation-settings:"wdth" 112}
+.way p{color:var(--text-secondary);max-width:48ch}
+
+/* ---------- seven areas, the ledger ---------- */
+.ledger{margin-top:3rem}
+.row{display:grid;gap:.5rem;padding:1.6rem 0;position:relative}
+@media (min-width:860px){.row{grid-template-columns:4rem 20rem 1fr;gap:2rem;align-items:baseline}}
+.row .n{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.14em}
+.row h3{font-size:clamp(1.1rem,1.7vw,1.4rem);font-variation-settings:"wdth" 110}
+.row p{color:var(--text-secondary);max-width:62ch}
+.row .rule{position:absolute;left:0;right:0;top:0;height:1px;background:var(--line);
+  transform:scaleX(0);transform-origin:left;transition:transform 1s var(--ease)}
+.row.in .rule{transform:scaleX(1)}
+
+/* ---------- industries ---------- */
+.inds{display:grid;gap:1px;background:var(--line);margin-top:3rem;border:1px solid var(--line)}
+@media (min-width:620px){.inds{grid-template-columns:1fr 1fr}}
+@media (min-width:1000px){.inds{grid-template-columns:repeat(3,1fr)}}
+.ind{position:relative;min-height:clamp(200px,26vh,290px);background:var(--panel) center/cover no-repeat;
+  display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.ind::before{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(to top,rgba(8,13,16,.94) 4%,rgba(8,13,16,.42) 58%,rgba(8,13,16,.22));
+  transition:opacity .6s var(--ease)}
+.ind::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--accent);z-index:3;
+  transform:scaleX(0);transform-origin:left;transition:transform .7s var(--ease)}
+.ind:hover::after{transform:scaleX(1)}
+.ind:hover::before{opacity:.82}
+.ind-in{position:relative;z-index:2;padding:1.5rem}
+.ind h3{font-size:clamp(1.15rem,1.9vw,1.5rem);font-variation-settings:"wdth" 112}
+.ind p{color:var(--text-secondary);font-size:.94rem;margin-top:.45rem;max-width:30ch}
+
+/* ---------- puff king ---------- */
+.puff{position:relative;background:var(--canvas-deep) center/cover no-repeat;overflow:hidden}
+.puff::before{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(8,13,16,.94) 30%,rgba(8,13,16,.6))}
+.puff-in{position:relative;z-index:2}
+.puff h2{font-size:clamp(2.1rem,5vw,4rem)}
+.tag{font-family:var(--mono);font-size:11px;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--accent);margin-top:1.4rem;display:inline-block;
+  border:1px solid var(--accent-muted);border-radius:999px;padding:.55rem 1.2rem}
+.stats{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.6rem}
+.stat{background:rgba(8,13,16,.55);border:1px solid rgba(106,74,38,.5);border-radius:10px;
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:1rem 1.4rem}
+.stat b{display:block;font-family:var(--display);font-weight:700;font-variation-settings:"wdth" 118;
+  font-size:clamp(1.5rem,3vw,2.2rem);color:var(--text-primary)}
+.stat span{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-secondary)}
+
+/* ---------- canvas ---------- */
+.canvas-grid{display:grid;gap:2.6rem;margin-top:3rem}
+@media (min-width:1040px){.canvas-grid{grid-template-columns:1.16fr .84fr;gap:clamp(2.5rem,4vw,4rem);align-items:start}}
+.step{margin-bottom:2.2rem}
+.step-lbl{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--daylight);margin-bottom:1rem}
+.opts{display:grid;gap:.6rem}
+@media (min-width:600px){.opts{grid-template-columns:1fr 1fr}}
+.opt{text-align:left;background:transparent;border:1px solid var(--line);border-radius:10px;
+  padding:.95rem 1.1rem;cursor:pointer;display:grid;gap:.25rem;
+  transition:border-color .4s var(--ease),background .4s var(--ease),transform .4s var(--ease)}
+.opt:hover{border-color:var(--line-strong);transform:translateY(-2px)}
+.opt b{font-family:var(--display);font-weight:600;font-variation-settings:"wdth" 110;font-size:1rem}
+.opt span{font-size:.86rem;color:var(--text-secondary);line-height:1.45}
+.opt[aria-pressed="true"]{border-color:var(--accent);background:rgba(207,144,69,.09)}
+.opt[aria-pressed="true"] b{color:var(--accent)}
+.note{width:100%;margin-top:.4rem;background:transparent;border:1px solid var(--line);border-radius:10px;
+  padding:.95rem 1.1rem;min-height:5.5rem;resize:vertical;font-family:var(--body);color:var(--text-primary)}
+.note::placeholder{color:#6E7B82}
+
+.vibe{border:1px solid var(--line);background:var(--panel);border-radius:14px;overflow:hidden;
+  position:sticky;top:90px}
+.vibe-img{aspect-ratio:16/10;background:var(--canvas-deep) center/cover no-repeat}
+.vibe-body{padding:1.6rem}
+.vibe h3{font-size:1.35rem;margin:.55rem 0 .7rem;font-variation-settings:"wdth" 112}
+.vibe>.vibe-body>p{color:var(--text-secondary);font-size:.95rem}
+.readouts{margin-top:1.5rem;display:grid;gap:0}
+.readout{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;
+  padding:.8rem 0;border-top:1px solid var(--line);opacity:.4;transition:opacity .6s var(--ease)}
+.readout.lit{opacity:1}
+.readout dt{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-secondary)}
+.readout dd{margin:0;font-family:var(--display);font-weight:600;font-variation-settings:"wdth" 110;
+  font-size:.98rem;text-align:right;color:var(--accent)}
+.hold-wrap{margin-top:1.6rem;display:grid;gap:.9rem}
+.hold-wrap>p{font-size:.92rem;color:var(--text-secondary)}
+.hold{position:relative;display:inline-flex;align-items:center;gap:.9rem;background:transparent;
+  border:1px solid var(--line-strong);border-radius:999px;padding:.8rem 1.4rem;cursor:pointer;
+  font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--text-secondary);justify-self:start;transition:color .4s var(--ease),border-color .4s var(--ease)}
+.hold:hover{color:var(--daylight);border-color:var(--daylight)}
+.hold svg{width:22px;height:22px;flex:none}
+.hold circle.track{stroke:var(--line-strong)}
+.hold circle.fill{stroke:var(--accent);transform:rotate(-90deg);transform-origin:50% 50%}
+.hold.done{color:var(--accent);border-color:var(--accent)}
+.dispatch{opacity:0;transform:translateY(8px);pointer-events:none;justify-self:start;
+  transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.dispatch.on{opacity:1;transform:none;pointer-events:auto}
+
+/* ---------- proof ---------- */
+.quote{position:relative;max-width:30ch;padding-left:1.8rem}
+.quote::before{content:"";position:absolute;left:0;top:.35rem;bottom:.35rem;width:2px;background:var(--accent);
+  transform:scaleY(0);transform-origin:top;transition:transform 1.1s var(--ease)}
+.in .quote::before{transform:scaleY(1)}
+.quote blockquote{margin:0;font-family:var(--body);font-style:italic;font-weight:300;
+  font-size:clamp(1.25rem,2.4vw,2rem);line-height:1.42;max-width:34ch}
+.quote figcaption{margin-top:1.5rem;font-family:var(--mono);font-size:10px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--text-secondary)}
+.quote figcaption b{color:var(--text-primary);font-weight:400}
+.counters{display:flex;flex-wrap:wrap;gap:clamp(2rem,6vw,4.5rem);margin-top:3.2rem}
+.counter b{display:block;font-family:var(--display);font-weight:700;font-variation-settings:"wdth" 124;
+  font-size:clamp(2.6rem,6vw,4.4rem);line-height:.86;color:var(--accent)}
+.counter span{display:block;margin-top:.7rem;font-family:var(--mono);font-size:10px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--text-secondary);max-width:22ch}
+
+/* ---------- faq ---------- */
+.faq{margin-top:3rem}
+.qa{display:grid;gap:.7rem;padding:1.9rem 0;border-top:1px solid var(--line)}
+@media (min-width:900px){.qa{grid-template-columns:.9fr 1.1fr;gap:2.6rem;align-items:start}}
+.qa h3{font-size:clamp(1.05rem,1.6vw,1.3rem);font-variation-settings:"wdth" 110;line-height:1.28}
+.qa p{color:var(--text-secondary);max-width:60ch}
+
+/* ---------- contact ---------- */
+.contact{background:var(--canvas-deep);border-top:1px solid var(--line)}
+.contact-grid{display:grid;gap:3rem}
+@media (min-width:980px){.contact-grid{grid-template-columns:1.05fr .95fr;gap:clamp(3rem,6vw,6rem);align-items:start}}
+.contact h2{font-size:clamp(2.1rem,4.6vw,3.4rem)}
+.big-cta{margin-top:2.2rem}
+.deets{margin-top:2.8rem;display:grid;gap:0}
+.deet{display:flex;justify-content:space-between;gap:1rem;padding:.95rem 0;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--text-secondary)}
+.deet b{font-weight:400;color:var(--text-primary)}
+form{display:grid;gap:1rem;border:1px solid var(--line);background:var(--panel);
+  border-radius:14px;padding:clamp(1.4rem,3vw,2.2rem)}
+.field{display:grid;gap:.45rem}
+.field label{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-secondary)}
+.field input,.field select{background:var(--canvas-deep);border:1px solid var(--line);border-radius:8px;
+  padding:.8rem .9rem;transition:border-color .4s var(--ease)}
+.field input:focus,.field select:focus{border-color:var(--accent);outline:none}
+.field input::placeholder{color:#6E7B82}
+.ok{font-size:.92rem;color:var(--daylight);display:none}
+.ok.on{display:block}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);background:var(--canvas-deep);position:relative;z-index:2}
+.foot{display:grid;gap:1.2rem;padding-block:3.4rem}
+.foot p{font-size:.88rem;color:var(--text-secondary);max-width:70ch}
+.foot .strong{font-family:var(--display);font-weight:600;font-variation-settings:"wdth" 112;
+  font-size:1.05rem;color:var(--text-primary)}
+.foot .fine{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:#6E7B82}
+
+/* ---------- imagery ----------
+   The plain url() is the fallback any browser understands. image-set() then
+   overrides it with the webp, which runs about 30 percent lighter. */
+.img{background-repeat:no-repeat;background-position:center;background-size:cover}
+.i-poster {background-image:url('assets/poster.jpg');
+           background-image:image-set(url('assets/poster.webp') type('image/webp'),url('assets/poster.jpg') type('image/jpeg'))}
+.i-ending {background-image:url('assets/ending.jpg');
+           background-image:image-set(url('assets/ending.webp') type('image/webp'),url('assets/ending.jpg') type('image/jpeg'))}
+.i-pass   {background-image:url('assets/pass.jpg');
+           background-image:image-set(url('assets/pass.webp') type('image/webp'),url('assets/pass.jpg') type('image/jpeg'))}
+.i-plan   {background-image:url('assets/plan.jpg');
+           background-image:image-set(url('assets/plan.webp') type('image/webp'),url('assets/plan.jpg') type('image/jpeg'))}
+.i-counter{background-image:url('assets/counter.jpg');
+           background-image:image-set(url('assets/counter.webp') type('image/webp'),url('assets/counter.jpg') type('image/jpeg'))}
+.i-1{background-image:url('assets/ind-1.jpg');background-image:image-set(url('assets/ind-1.webp') type('image/webp'),url('assets/ind-1.jpg') type('image/jpeg'))}
+.i-2{background-image:url('assets/ind-2.jpg');background-image:image-set(url('assets/ind-2.webp') type('image/webp'),url('assets/ind-2.jpg') type('image/jpeg'))}
+.i-3{background-image:url('assets/ind-3.jpg');background-image:image-set(url('assets/ind-3.webp') type('image/webp'),url('assets/ind-3.jpg') type('image/jpeg'))}
+.i-4{background-image:url('assets/ind-4.jpg');background-image:image-set(url('assets/ind-4.webp') type('image/webp'),url('assets/ind-4.jpg') type('image/jpeg'))}
+
+/* ---------- reduced motion, honoured completely ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important;transition-delay:0s!important}
+  .rev,.stagger>*{opacity:1;transform:none}
+  .drawline,.row .rule{transform:scaleX(1)}
+  .spine .draw{transform:scaleY(1)}
+  .quote::before,.beat-item .stem{transform:scaleY(1)}
+  .readout{opacity:1}
+  .dispatch{opacity:1;transform:none;pointer-events:auto}
+  .band{opacity:1}
+}
+/* the same pins, applied live when the preference flips mid-session */
+body.pinned .rev,body.pinned .stagger>*{opacity:1;transform:none;transition:none}
+body.pinned .drawline,body.pinned .row .rule{transform:scaleX(1)}
+body.pinned .spine .draw{transform:scaleY(1)}
+body.pinned .quote::before,body.pinned .beat-item .stem{transform:scaleY(1)}
+body.pinned .readout{opacity:1}
+body.pinned .dispatch{opacity:1;transform:none;pointer-events:auto}
+body.paused *,body.paused *::before,body.paused *::after{animation-play-state:paused!important}
+</style>
+</head>
+<body>
+<div class="ambient" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr">
+  <div class="hdr-in">
+    <a class="mark" href="#top"><b>R.B</b><span>Foods &amp; Management</span></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#roadmap">45 Days</a>
+      <a href="#services">Services</a>
+      <a href="#industries">Industries</a>
+      <a href="#canvas">Canvas</a>
+    </nav>
+    <a class="btn btn-solid" id="hdrwa" href="#contact">WhatsApp Rahul</a>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+<div id="top"></div>
+
+<!-- ===== scroll hero ===== -->
+<section class="hero" aria-label="R.B Consulting, concept to grand opening">
+  <div class="stage" id="stage">
+    <div class="poster img i-poster" id="poster" aria-hidden="true"></div>
+    <video id="hero" preload="none" muted playsinline aria-hidden="true" tabindex="-1"></video>
+    <div class="scrim" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="dust" id="dust" aria-hidden="true"></div>
+
+    <div class="bands" id="bands">
+      <div class="band" data-a="0" data-b="0.13" data-entrance="e-drift">
+        <p class="kick">8 years of corporate and QSR expertise</p>
+        <h1 data-split="word">Complete Food Business Consulting</h1>
+        <p class="lede">From concept to grand opening.</p>
+      </div>
+
+      <div class="band" data-a="0.15" data-b="0.28" data-entrance="e-blur">
+        <p class="beat e-blur">
+          <span class="soft" aria-hidden="true">Today it is four walls and a lease you are already paying rent on.</span>
+          <span class="sharp">Today it is four walls and a lease you are already paying rent on.</span>
+        </p>
+      </div>
+
+      <div class="band" data-a="0.30" data-b="0.43" data-entrance="e-grid" data-spread="0.5">
+        <span class="day">Days 1 to 10</span>
+        <p class="beat" data-split="char">Location found. Market read. Layout drawn and licences already moving.</p>
+      </div>
+
+      <div class="band" data-a="0.45" data-b="0.58" data-entrance="e-punch">
+        <span class="day">Days 11 to 25</span>
+        <p class="beat" data-split="word">Civil work done. Interiors in. Equipment delivered and installed.</p>
+      </div>
+
+      <div class="band" data-a="0.60" data-b="0.73" data-entrance="e-weave">
+        <span class="day">Days 26 to 35</span>
+        <p class="beat" data-split="char">Vendors locked. Staff hired. Every SOP trained on the floor.</p>
+      </div>
+
+      <div class="band" data-a="0.75" data-b="0.86" data-entrance="e-depth">
+        <span class="day">Days 36 to 45</span>
+        <p class="beat"><span class="line">Compliance cleared. Campaign live. Dry runs finished.</span></p>
+      </div>
+
+      <div class="band" data-a="0.88" data-b="1" data-entrance="e-rise">
+        <h2 data-split="word">Day 45. You open.</h2>
+        <p class="lede">Then Rahul's team runs your floor with you for the next two months. Zero royalty, zero convenience fee, no hidden charges.</p>
+        <div class="cta"><a class="btn btn-solid" id="herowa" href="#contact">WhatsApp Rahul</a></div>
+      </div>
+    </div>
+
+    <svg class="ring" id="ring" viewBox="0 0 48 48" aria-hidden="true">
+      <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-dasharray="126" style="stroke-dashoffset:var(--ld,126)"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ===== static hero, for phones and reduced motion ===== -->
+<section class="static-hero img i-ending" id="statichero" aria-label="R.B Consulting, concept to grand opening">
+  <div class="static-in">
+    <p class="kick">8 years of corporate and QSR expertise</p>
+    <h1>Complete Food Business Consulting</h1>
+    <p>From concept to grand opening in 45 days. Then Rahul's team runs your floor with you for two months after that.</p>
+    <div class="cta">
+      <a class="btn btn-solid btn-lg" id="staticwa" href="#contact">WhatsApp Rahul</a>
+      <a class="btn btn-quiet btn-lg" href="#roadmap">See the 45 days</a>
+    </div>
+  </div>
+</section>
+
+<div class="lower">
+  <div class="spine" aria-hidden="true"><span class="base"></span><span class="draw" id="spinedraw"></span></div>
+
+  <!-- ===== ticker ===== -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track" id="ticker"></div>
+  </div>
+
+  <!-- ===== settle ===== -->
+  <section class="pad settle">
+    <div class="wrap indent">
+      <p class="sr">Zero royalty. Zero convenience fee. No hidden charges.</p>
+      <p class="rev">Helping Restaurants, Cafes, Cloud Kitchens and QSR Brands build highly profitable, structured, and scalable businesses with world-class standard operating procedures.</p>
+    </div>
+  </section>
+
+  <!-- ===== four beats ===== -->
+  <section class="pad" aria-label="How the work runs">
+    <div class="wrap indent">
+      <div class="drawline"></div>
+      <div class="beats stagger" style="margin-top:2.6rem">
+        <div class="beat-item"><span class="stem"></span><span class="n">01</span><h3>Concept</h3><p>Raw ideas take a measurable form.</p></div>
+        <div class="beat-item"><span class="stem"></span><span class="n">02</span><h3>Kitchen</h3><p>The stainless line is drawn for yield.</p></div>
+        <div class="beat-item"><span class="stem"></span><span class="n">03</span><h3>SOP</h3><p>World-class procedures lock the service.</p></div>
+        <div class="beat-item"><span class="stem"></span><span class="n">04</span><h3>Grand Opening</h3><p>A storefront ready to receive guests.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== about ===== -->
+  <section class="pad" id="about">
+    <div class="wrap indent">
+      <div class="about">
+        <div class="portrait rev img i-pass" id="portrait">
+          <span class="role">Founder</span>
+          <span class="name">Rahul<br>Bajpai</span>
+        </div>
+        <div>
+          <p class="kick rev">Founder</p>
+          <h2 class="h2 rev" style="margin-top:1rem">Meet Rahul Bajpai</h2>
+          <p class="lede rev" style="margin-top:1.4rem;max-width:56ch">Expert hospitality advisory bringing global fast food standard operating procedures, yield equations, and ergonomic layout designs to independent food entrepreneurs across India.</p>
+          <div class="yrs rev"><b class="count" data-to="8">0</b><span>years</span></div>
+          <div class="creds stagger">
+            <div class="cred"><b>Burger King</b><span>Global QSR expertise</span></div>
+            <div class="cred"><b>Pizza Hut</b><span>Operations and quality</span></div>
+            <div class="cred"><b>Taco Bell</b><span>SOPs and systems</span></div>
+            <div class="cred"><b>Zepto Cafe</b><span>Q-commerce cafe launch</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== roadmap ===== -->
+  <section class="pad" id="roadmap">
+    <div class="wrap indent">
+      <p class="kick kick-quiet rev">Zero to inauguration</p>
+      <h2 class="h2 rev" style="margin-top:1rem;max-width:18ch">45 days, cut into four phases</h2>
+      <p class="lede rev" style="margin-top:1.4rem;max-width:52ch">Every phase has a date on it. You always know what week you are in and what is finished.</p>
+
+      <div class="phases">
+        <article class="phase rev" data-mark="01">
+          <p class="when">Days 1 to 10</p>
+          <div><h3>Site selection and planning</h3><p>Location discovery, market analysis, the start of legal documentation, and the interior layout finalised.</p></div>
+        </article>
+        <article class="phase rev" data-mark="10">
+          <p class="when">Days 11 to 25</p>
+          <div><h3>Civil work, interiors and equipment</h3><p>Store structure built, interiors executed, equipment delivered and installed.</p></div>
+        </article>
+        <article class="phase rev" data-mark="25">
+          <p class="when">Days 26 to 35</p>
+          <div><h3>Vendors, hiring and training</h3><p>Raw material supply chain set up, staff recruited, and every on-site and off-site training module completed.</p></div>
+        </article>
+        <article class="phase rev" data-mark="35" data-endmark="45">
+          <p class="when">Days 36 to 45</p>
+          <div><h3>Marketing, dry run and inauguration</h3><p>Legal compliance closed, the two-month marketing campaign launched, operational dry runs, and the grand opening.</p></div>
+        </article>
+      </div>
+
+      <div class="road-still rev img i-plan" id="roadstill"></div>
+    </div>
+  </section>
+
+  <!-- ===== five ways ===== -->
+  <section class="pad" id="services">
+    <div class="wrap indent">
+      <p class="kick rev">Mandates</p>
+      <h2 class="h2 rev" style="margin-top:1rem;max-width:16ch">Five ways to start</h2>
+      <div class="ways stagger">
+        <article class="way"><span class="n">01 / 05</span><h3>Restaurant Launch</h3><p>From concept through opening day. Rooms, recipes, and the line.</p></article>
+        <article class="way"><span class="n">02 / 05</span><h3>Cloud Kitchen Blueprints</h3><p>SOP-driven dark kitchens planned for aggregator margins.</p></article>
+        <article class="way"><span class="n">03 / 05</span><h3>Ergonomic Kitchen Design</h3><p>Yield-led layouts that keep the pass moving.</p></article>
+        <article class="way"><span class="n">04 / 05</span><h3>Standard SOP Playbook</h3><p>World-class operating procedures, written for the floor.</p></article>
+        <article class="way"><span class="n">05 / 05</span><h3>Franchise Structure</h3><p>Repeatable brand systems without hidden charges.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== seven areas ===== -->
+  <section class="pad">
+    <div class="wrap indent">
+      <p class="kick kick-quiet rev">Inside every mandate</p>
+      <h2 class="h2 rev" style="margin-top:1rem;max-width:20ch">Seven things handled for you</h2>
+      <div class="ledger">
+        <div class="row"><span class="rule"></span><span class="n">01</span><h3>Location finding and site selection</h3><p>Technical and commercial help identifying, analysing and picking a high-footfall site that suits your money and your format.</p></div>
+        <div class="row"><span class="rule"></span><span class="n">02</span><h3>Interior design and basic structure</h3><p>Basic store infrastructure built, layout planned, 2D and 3D interior design, and an outlet that matches the brand it is meant to be.</p></div>
+        <div class="row"><span class="rule"></span><span class="n">03</span><h3>Equipment and vendor management</h3><p>Reliable vendor connections for kitchen and serving equipment, and a supply chain set up for raw materials.</p></div>
+        <div class="row"><span class="rule"></span><span class="n">04</span><h3>Team hiring and training</h3><p>Qualified staff recruited for the floor and the kitchen, then trained on SOPs, customer service and kitchen management.</p></div>
+        <div class="row"><span class="rule"></span><span class="n">05</span><h3>Legal documentation and process</h3><p>Every legal procedure, licence, government paper and process fee handled end to end.</p></div>
+        <div class="row"><span class="rule"></span><span class="n">06</span><h3>Marketing strategy and platforms</h3><p>A dedicated plan for the first two months, with digital and local platforms set up to bring footfall in.</p></div>
+        <div class="row"><span class="rule"></span><span class="n">07</span><h3>Two months of operations management</h3><p>After the inauguration, Rahul's team manages daily operations, decisions and the store itself for the first two months.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== industries ===== -->
+  <section class="pad" id="industries">
+    <div class="wrap indent">
+      <p class="kick rev">Industries</p>
+      <h2 class="h2 rev" style="margin-top:1rem;max-width:20ch">Rooms we know how to run</h2>
+      <div class="inds stagger">
+        <article class="ind img i-1"><div class="ind-in"><h3>Fine Dining</h3><p>Plated hospitality with a kitchen rhythm that holds through service.</p></div></article>
+        <article class="ind img i-2"><div class="ind-in"><h3>Specialty Cafe</h3><p>Rooms for conversation and craft. Consistent, warm, repeatable.</p></div></article>
+        <article class="ind img i-counter"><div class="ind-in"><h3>QSR Chains</h3><p>High-volume systems drawn from corporate QSR practice.</p></div></article>
+        <article class="ind img i-pass"><div class="ind-in"><h3>Cloud Kitchen</h3><p>Delivery-first kitchens built around SOP and aggregator margins.</p></div></article>
+        <article class="ind img i-3"><div class="ind-in"><h3>Food Courts</h3><p>Compact footprints with disciplined throughput on the line.</p></div></article>
+        <article class="ind img i-4"><div class="ind-in"><h3>Hotel F&amp;B</h3><p>Hotel restaurant and banquet operations, brought to order.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== puff king ===== -->
+  <section class="pad puff img i-counter" id="puffking">
+    <div class="wrap indent puff-in">
+      <p class="kick rev">Premium QSR case study</p>
+      <h2 class="rev" style="margin-top:1rem;max-width:14ch">PUFF KING Franchise Design</h2>
+      <p class="lede rev" style="margin-top:1.4rem;max-width:46ch">Rahul Bajpai conceptualised and designed this high-yield quick service restaurant model.</p>
+      <p class="tag rev">Eat, Laugh, Enjoy</p>
+      <div class="stats stagger">
+        <div class="stat"><b>&#8377;12.5L</b><span>Ultra-low capex setup</span></div>
+        <div class="stat"><b>High-margin</b><span>Capital growth model</span></div>
+      </div>
+      <p class="rev" style="margin-top:2.4rem">
+        <a class="btn btn-quiet" id="deckcta" href="#contact">Explore the investor deck</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== the canvas, the interactive moment ===== -->
+  <section class="pad" id="canvas">
+    <div class="wrap indent">
+      <p class="kick kick-quiet rev">Interactive co-creation</p>
+      <h2 class="h2 rev" style="margin-top:1rem;max-width:18ch">The Concept and Culture Canvas</h2>
+      <p class="lede rev" style="margin-top:1.4rem;max-width:58ch">We reject cold, generic templates. Tell us about the soul, operational culture, and unique nature of your food brand. We will weave it directly into custom SOP playbooks.</p>
+
+      <div class="canvas-grid">
+        <div>
+          <div class="step" data-step="nature">
+            <p class="step-lbl">01 &middot; Select your business nature</p>
+            <div class="opts">
+              <button type="button" class="opt" aria-pressed="false" data-v="Specialty Cafe / Bistro"><b>Specialty Cafe / Bistro</b><span>Aesthetic spaces for conversation and craft brews</span></button>
+              <button type="button" class="opt" aria-pressed="false" data-v="High-Speed QSR"><b>High-Speed QSR</b><span>Fast service, neat packaging, high-volume consistency</span></button>
+              <button type="button" class="opt" aria-pressed="false" data-v="Casual Family Dine"><b>Casual Family Dine</b><span>Cozy spaces with diverse recipes and warm hospitality</span></button>
+              <button type="button" class="opt" aria-pressed="false" data-v="Delivery Cloud Kitchen"><b>Delivery Cloud Kitchen</b><span>SOP-driven dark kitchens optimised for aggregator margins</span></button>
+            </div>
+          </div>
+
+          <div class="step" data-step="vibe">
+            <p class="step-lbl">02 &middot; Define the brand vibe</p>
+            <div class="opts">
+              <button type="button" class="opt" aria-pressed="false" data-v="Cozy &amp; Community-Centric"><b>Cozy &amp; Community-Centric</b><span>Feels like a neighbourhood living room; high repeat loyalty</span></button>
+              <button type="button" class="opt" aria-pressed="false" data-v="Premium &amp; Artisanal"><b>Premium &amp; Artisanal</b><span>Highly photogenic, slow-dripped luxury, customised details</span></button>
+              <button type="button" class="opt" aria-pressed="false" data-v="Energetic &amp; Fast-Paced"><b>Energetic &amp; Fast-Paced</b><span>Vibrant playlists, neon cues, zero idle delay</span></button>
+              <button type="button" class="opt" aria-pressed="false" data-v="Heritage &amp; Soulful"><b>Heritage &amp; Soulful</b><span>Tells a traditional story; rooted in local organic ingredients</span></button>
+            </div>
+          </div>
+
+          <div class="step" data-step="culture">
+            <p class="step-lbl">03 &middot; Operational and customer culture</p>
+            <div class="opts">
+              <button type="button" class="opt" aria-pressed="false" data-v="People First"><b>People First</b><span>Warm, conversational hospitality where staff remembers guest names</span></button>
+              <button type="button" class="opt" aria-pressed="false" data-v="Flawless Precision"><b>Flawless Precision</b><span>Clockwork speed, spotless steel tables, strict portion controls</span></button>
+              <button type="button" class="opt" aria-pressed="false" data-v="Experimental / Trendy"><b>Experimental / Trendy</b><span>Ever-changing secret menus, quirky artwork, digital-first presence</span></button>
+            </div>
+          </div>
+
+          <label class="step-lbl" for="story">Tell us about your brand's story and spirit</label>
+          <textarea class="note" id="story" placeholder="Optional. A line or two is plenty."></textarea>
+        </div>
+
+        <aside class="vibe rev">
+          <div class="vibe-img img i-2" id="vibeimg"></div>
+          <div class="vibe-body">
+            <p class="kick">Brand vibe portrait</p>
+            <h3>Handmade by R.B Consultancy</h3>
+            <p>We optimise seating layouts and custom warm lighting to organically guide customers to feel completely at home.</p>
+            <dl class="readouts">
+              <div class="readout" data-for="nature"><dt>Aesthetic blueprint</dt><dd>Not chosen yet</dd></div>
+              <div class="readout" data-for="vibe"><dt>Atmospheric vibe</dt><dd>Not chosen yet</dd></div>
+              <div class="readout" data-for="culture"><dt>Operational culture</dt><dd>Not chosen yet</dd></div>
+            </dl>
+            <div class="hold-wrap">
+              <p>Ready to build this concept? Press and hold to commission the blueprint.</p>
+              <button type="button" class="hold" id="hold" aria-describedby="holdhint">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle class="track" cx="12" cy="12" r="10" fill="none" stroke-width="2"/>
+                  <circle class="fill" cx="12" cy="12" r="10" fill="none" stroke-width="2"
+                          stroke-dasharray="62.8" style="stroke-dashoffset:var(--hd,62.8)"/>
+                </svg>
+                <span id="holdlabel">Hold to commission</span>
+              </button>
+              <span class="sr" id="holdhint">Press and hold, or press Enter, to finish the blueprint.</span>
+              <a class="btn btn-solid dispatch" id="dispatch" href="#contact">Dispatch vibe to advisory line</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== proof ===== -->
+  <section class="pad">
+    <div class="wrap indent rev">
+      <figure class="quote">
+        <blockquote>Rahul's deep expertise in operational workflows completely restructured our kitchen line. We reduced our table ticket times from 22 minutes down to just 12 minutes, which increased our weekend customer capacity by 45%. His SOP development is absolutely world-class.</blockquote>
+        <figcaption><b>Amit Patel</b> &nbsp;/&nbsp; Co-Founder</figcaption>
+      </figure>
+      <div class="counters">
+        <div class="counter"><b class="count" data-to="12">0</b><span>Ticket time in minutes, down from 22</span></div>
+        <div class="counter"><b class="count" data-to="45" data-suffix="%">0</b><span>More weekend capacity</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== faq ===== -->
+  <section class="pad">
+    <div class="wrap indent">
+      <p class="kick rev">Straight answers</p>
+      <h2 class="h2 rev" style="margin-top:1rem;max-width:20ch">The questions people actually ask</h2>
+      <div class="faq">
+        <div class="qa rev"><h3>How do I know you will not take the money and disappear?</h3><p>That is the fair question, and it is why the work is dated. The 45 days are cut into four phases you can check off, and the two months after your opening are Rahul's team running your floor. He is still on site long after the money has moved.</p></div>
+        <div class="qa rev"><h3>Consultants charge lakhs for two weeks of work. What am I actually paying for?</h3><p>Seven areas of work over 45 days, then 60 days of operations management. Zero royalty, zero convenience fee, no hidden charges, and no commission taken out of any vendor in the network.</p></div>
+        <div class="qa rev"><h3>Can you promise my outlet will make money?</h3><p>No. Anyone who promises that is selling you something. What is promised is the structure: a yield-led layout, a costed menu, trained staff, licences in hand, and a marketing plan already running on opening day.</p></div>
+        <div class="qa rev"><h3>I have never run a kitchen. Can I still do this?</h3><p>Yes. That is exactly who the two-month operations handover is for. Rahul's team runs daily operations and decisions while you learn your own floor, instead of learning it on customers.</p></div>
+        <div class="qa rev"><h3>Do you only work in Gujarat?</h3><p>The corporate office is in Surat. Mandates run pan-India.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== contact ===== -->
+  <section class="pad contact" id="contact">
+    <div class="wrap indent">
+      <div class="contact-grid">
+        <div>
+          <p class="kick rev">Advisory line</p>
+          <h2 class="rev" style="margin-top:1rem">Book Consultation</h2>
+          <p class="lede rev" style="margin-top:1.4rem;max-width:40ch">One message gets you Rahul, not a sales desk.</p>
+          <p class="big-cta rev"><a class="btn btn-solid btn-lg" id="mainwa" href="#">WhatsApp +91 90818 39191</a></p>
+          <div class="deets rev">
+            <div class="deet"><span>Phone</span><b>+91 90818 39191</b></div>
+            <div class="deet"><span>Office</span><b>Surat, Gujarat, India</b></div>
+            <div class="deet"><span>Hours</span><b>09:00 AM to 08:00 PM IST</b></div>
+          </div>
+        </div>
+
+        <form class="rev" id="bookform" novalidate>
+          <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" type="text" placeholder="Your name" autocomplete="name" required></div>
+          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" placeholder="Mobile number" autocomplete="tel" required></div>
+          <div class="field"><label for="f-city">City</label><input id="f-city" name="city" type="text" placeholder="Where the outlet will be" autocomplete="address-level2"></div>
+          <div class="field"><label for="f-type">Business type</label>
+            <select id="f-type" name="type">
+              <option>Specialty Cafe / Bistro</option>
+              <option>High-Speed QSR</option>
+              <option>Casual Family Dine</option>
+              <option>Delivery Cloud Kitchen</option>
+            </select>
+          </div>
+          <button class="btn btn-solid" type="submit">Send to advisory line</button>
+          <p class="ok" id="formok" role="status">Opening WhatsApp with your details. If it does not open, call +91 90818 39191.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer>
+  <div class="wrap indent foot">
+    <p class="strong">R.B Foods &amp; Management Consultancy. Pan-India Advisory Mandates.</p>
+    <p>Corporate Office: Surat, Gujarat, India. Pan-India Advisory Mandates.</p>
+    <p class="fine">&copy; 2026 R.B Foods &amp; Management Consultancy. All Rights Reserved.</p>
+    <p class="fine">Website concept by Sutrava Software Solutions.</p>
+    <p class="fine">The hero film and section imagery on this page are generated. R.B Foods &amp; Management Consultancy, Rahul Bajpai, and the work described are real.</p>
+  </div>
+</footer>
+
+<script>
+(() => {
+'use strict';
+
+const WA = '919081839191';
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
+const smoothstep = (p, e0, e1) => { const t = clamp((p - e0) / (e1 - e0), 0, 1); return t * t * (3 - 2 * t); };
+
+/* ---------- the five static-hero gates, identical to the CSS ---------- */
+const GATES = [
+  '(max-width: 720px)',
+  '(orientation: portrait) and (max-width: 1024px)',
+  '(orientation: portrait) and (pointer: coarse)',
+  '(orientation: landscape) and (pointer: coarse) and (max-height: 560px)',
+  '(prefers-reduced-motion: reduce)'
+];
+
+/* ---------- ticker ---------- */
+{
+  const line = '<span>ZERO ROYALTY <em>&bull;</em> ZERO CONVENIENCE FEE <em>&bull;</em> NO HIDDEN CHARGES</span>';
+  $('#ticker').innerHTML = line.repeat(12);
+}
+
+/* ---------- WhatsApp links ---------- */
+const waLink = text => `https://wa.me/${WA}?text=${encodeURIComponent(text)}`;
+const hello = waLink("Hello Rahul, I'd like to talk about opening a food outlet.");
+['#mainwa', '#hdrwa', '#herowa', '#staticwa'].forEach(s => {
+  const el = $(s);
+  if (!el) return;
+  el.href = hello;
+  el.target = '_blank';
+  el.rel = 'noopener';
+});
+$('#deckcta').href = waLink('Hello Rahul, please send me the PUFF KING investor deck.');
+$('#deckcta').target = '_blank';
+$('#deckcta').rel = 'noopener';
+
+/* ---------- split text, seeded so every load is identical ---------- */
+function rng(seed) { let s = seed >>> 0; return () => (s = (s * 1664525 + 1013904223) >>> 0) / 4294967296; }
+
+function split(el, mode, spread) {
+  const text = el.textContent;
+  el.textContent = '';
+  const sr = document.createElement('span');
+  sr.className = 'sr';
+  sr.textContent = text;
+  el.appendChild(sr);
+
+  const vis = document.createElement('span');
+  vis.setAttribute('aria-hidden', 'true');
+  const rand = rng(text.length * 7919 + 13);
+  const words = text.split(' ');
+  let ci = 0;
+  const total = text.replace(/ /g, '').length;
+
+  words.forEach((word, wi) => {
+    const w = document.createElement('span');
+    w.className = 'w';
+    if (mode === 'word') {
+      w.style.setProperty('--th', (wi / Math.max(1, words.length) * 0.55).toFixed(3));
+      if (word.length > 6) w.classList.add('em');
+      w.textContent = word;
+    } else {
+      for (const ch of word) {
+        const c = document.createElement('span');
+        c.className = 'c';
+        c.textContent = ch;
+        const ordered = spread ? (ci / Math.max(1, total)) * spread + rand() * 0.06 : rand() * 0.55;
+        c.style.setProperty('--th', ordered.toFixed(3));
+        c.style.setProperty('--jx', `${(rand() * 2 - 1) * 26}px`);
+        c.style.setProperty('--jy', `${(ci % 2 ? 1 : -1) * (10 + rand() * 20)}px`);
+        c.style.setProperty('--jr', `${(rand() * 2 - 1) * 12}deg`);
+        w.appendChild(c);
+        ci++;
+      }
+    }
+    vis.appendChild(w);
+    if (wi < words.length - 1) vis.appendChild(document.createTextNode(' '));
+  });
+  el.appendChild(vis);
+}
+
+/* ---------- hero scrub ---------- */
+const hero = $('.hero');
+const stage = $('#stage');
+const video = $('#hero');
+const ring = $('#ring');
+const VIDEO_URL = 'assets/hero.mp4';
+const VIDEO_BYTES = 3021655;   // measured, used only if the server withholds Content-Length
+
+const bands = $$('.band').map(el => {
+  const a = parseFloat(el.dataset.a), b = parseFloat(el.dataset.b);
+  el.classList.add(el.dataset.entrance);
+  const target = $('[data-split]', el);
+  if (target) split(target, target.dataset.split, parseFloat(el.dataset.spread) || 0);
+  return { el, a, b, op: -1, k: -1 };
+});
+
+let target = 0, shown = 0, rafId = null, lastTick = 0;
+let seekBusy = false, pendingTime = null;
+let heroOnScreen = true, scrubOn = false, videoStarted = false, loadK = 0;
+
+function heroProgress() {
+  const range = hero.offsetHeight - window.innerHeight;
+  if (range <= 0) return 0;
+  return clamp(-hero.getBoundingClientRect().top / range, 0, 1);
+}
+
+/* The camera in the third segment is still drifting when the footage runs out,
+   so the arrival is brought to rest here rather than in the encode. Film time
+   runs at a constant rate until DECEL, then its rate falls linearly to zero and
+   lands on the final frame exactly as the scroll range ends. Rate is continuous
+   across the join, and the 5 percent lift before it is far too small to see.
+   Retiming the tail in ffmpeg was tried first and rejected: it duplicates frames
+   rather than slowing the camera, which reads as stutter. */
+const DECEL = 0.90;
+const RATE = 1 / (DECEL + (1 - DECEL) / 2);
+function filmProgress(p) {
+  if (p <= DECEL) return p * RATE;
+  const u = clamp((p - DECEL) / (1 - DECEL), 0, 1);
+  return clamp((DECEL + (1 - DECEL) * (u - u * u / 2)) * RATE, 0, 1);
+}
+
+function requestSeek(t) {
+  if (!video.duration || !isFinite(t)) return;
+  if (seekBusy) { pendingTime = t; return; }
+  seekBusy = true;
+  video.currentTime = t;
+}
+video.addEventListener('seeked', () => {
+  seekBusy = false;
+  if (pendingTime !== null) { const t = pendingTime; pendingTime = null; requestSeek(t); }
+});
+video.addEventListener('error', () => { seekBusy = false; pendingTime = null; failVideo(); });
+
+function updateCaptions(p) {
+  for (let i = 0; i < bands.length; i++) {
+    const bd = bands[i];
+    const f = Math.min(0.02, (bd.b - bd.a) / 3);
+    const inRamp = i === 0 ? 1 : smoothstep(p, bd.a, bd.a + f);
+    const outRamp = i === bands.length - 1 ? 1 : (1 - smoothstep(p, bd.b - f, bd.b));
+    const op = inRamp * outRamp;
+    let k = clamp((p - bd.a) / (f || 0.02), 0, 1);
+    if (i === 0) k = Math.max(k, loadK);
+
+    if (Math.abs(op - bd.op) > 0.004) { bd.op = op; bd.el.style.opacity = op.toFixed(3); }
+    if (Math.abs(k - bd.k) > 0.008) { bd.k = k; bd.el.style.setProperty('--k', k.toFixed(3)); }
+  }
+}
+
+function tick(now) {
+  const dt = Math.min(100, now - (lastTick || now));
+  lastTick = now;
+  const k = 0.16;
+  shown += (target - shown) * (1 - Math.pow(1 - k, dt / 16.667));
+  if (Math.abs(target - shown) < 0.0005) { shown = target; rafId = null; lastTick = 0; }
+  else rafId = requestAnimationFrame(tick);
+  if (video.duration) requestSeek(filmProgress(shown) * video.duration);
+  updateCaptions(shown);
+}
+
+function onScroll() {
+  target = heroProgress();
+  if (rafId === null && heroOnScreen) rafId = requestAnimationFrame(tick);
+}
+
+function failVideo() {
+  if (!ring.isConnected) return;
+  const cue = document.createElement('div');
+  cue.className = 'cue';
+  cue.innerHTML = '<i></i><span>Scroll</span>';
+  ring.replaceWith(cue);
+}
+
+async function loadHeroBlob() {
+  const ctrl = new AbortController();
+  let watchdog = setTimeout(() => ctrl.abort(), 20000);
+  const res = await fetch(VIDEO_URL, { signal: ctrl.signal });
+  if (!res.ok) throw new Error('video ' + res.status);
+  const total = Number(res.headers.get('Content-Length')) || VIDEO_BYTES;
+  const reader = res.body.getReader();
+  const chunks = [];
+  let got = 0, lastRing = 0;
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    clearTimeout(watchdog);
+    watchdog = setTimeout(() => ctrl.abort(), 20000);
+    chunks.push(value);
+    got += value.length;
+    const frac = Math.min(1, got / total);
+    const now = performance.now();
+    if (now - lastRing > 100 || frac === 1) {
+      lastRing = now;
+      ring.style.setProperty('--ld', Math.round(126 * (1 - frac)));
+    }
+  }
+  clearTimeout(watchdog);
+  ring.style.setProperty('--ld', 0);
+  video.src = URL.createObjectURL(new Blob(chunks));
+  video.load();
+  video.addEventListener('canplay', () => {
+    requestSeek(filmProgress(heroProgress()) * video.duration);
+    stage.classList.add('video-ready');
+    ring.style.opacity = '0';
+  }, { once: true });
+}
+
+function initHeroOnce() {
+  if (videoStarted) return;
+  videoStarted = true;
+
+  // dust motes, seeded positions so the scene is identical every load
+  const rand = rng(4242);
+  const dust = $('#dust');
+  for (let i = 0; i < 16; i++) {
+    const m = document.createElement('i');
+    m.style.left = (rand() * 100).toFixed(1) + '%';
+    m.style.animationDelay = (-rand() * 46).toFixed(1) + 's';
+    m.style.animationDuration = (34 + rand() * 26).toFixed(1) + 's';
+    m.style.opacity = (0.05 + rand() * 0.07).toFixed(2);
+    dust.appendChild(m);
+  }
+  stage.classList.add('play');
+
+  // The poster has to be on screen before the 3MB film starts competing for
+  // bandwidth. The load event fires once the poster background has painted;
+  // the timer is the safety net if some subresource never resolves.
+  let started = false;
+  const start = () => { if (started) return; started = true; loadHeroBlob().catch(failVideo); };
+  if (document.readyState === 'complete') requestAnimationFrame(start);
+  else addEventListener('load', start, { once: true });
+  setTimeout(start, 4000);
+
+  // band one assembles on load, then hands over to scroll
+  const t0 = performance.now();
+  const ramp = now => {
+    loadK = clamp((now - t0) / 1100, 0, 1);
+    updateCaptions(shown);
+    if (loadK < 1) requestAnimationFrame(ramp);
+  };
+  requestAnimationFrame(ramp);
+
+  new IntersectionObserver(es => {
+    heroOnScreen = es[0].isIntersecting;
+    if (heroOnScreen && rafId === null && scrubOn) rafId = requestAnimationFrame(tick);
+  }, { rootMargin: '10px' }).observe(hero);
+}
+
+function enableScrub() {
+  if (scrubOn) return;
+  scrubOn = true;
+  initHeroOnce();
+  addEventListener('scroll', onScroll, { passive: true });
+  bands.forEach(b => { b.op = -1; b.k = -1; });
+  unpinFinalStates();
+  updateCaptions(heroProgress());
+  onScroll();
+}
+function disableScrub() {
+  if (!scrubOn) return;
+  scrubOn = false;
+  removeEventListener('scroll', onScroll);
+  if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; }
+}
+function applyHeroMode() {
+  if (GATES.some(q => matchMedia(q).matches)) disableScrub();
+  else enableScrub();
+}
+const MQLS = GATES.map(q => matchMedia(q));
+MQLS.forEach(m => m.addEventListener('change', applyHeroMode));
+
+/* ---------- page entrances ---------- */
+const io = new IntersectionObserver(es => {
+  for (const e of es) {
+    if (!e.isIntersecting) continue;
+    e.target.classList.add('in');
+    if (e.target.classList.contains('stagger')) {
+      const ms = 120 + e.target.children.length * 95;
+      setTimeout(() => e.target.classList.add('done'), ms);
+    }
+    io.unobserve(e.target);
+  }
+}, { threshold: 0.16, rootMargin: '0px 0px -8% 0px' });
+$$('.rev,.stagger,.drawline,.row,.beats').forEach(el => io.observe(el));
+
+/* ---------- counters ---------- */
+const countIO = new IntersectionObserver(es => {
+  for (const e of es) {
+    if (!e.isIntersecting) continue;
+    const el = e.target;
+    countIO.unobserve(el);
+    const to = Number(el.dataset.to), sfx = el.dataset.suffix || '';
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { el.textContent = to + sfx; continue; }
+    const t0 = performance.now(), dur = 1300;
+    let last = '';
+    const step = now => {
+      const p = clamp((now - t0) / dur, 0, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      const s = Math.round(to * eased) + sfx;
+      if (s !== last) { last = s; el.textContent = s; }
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+}, { threshold: 0.6 });
+$$('.count').forEach(el => countIO.observe(el));
+
+/* ---------- the spine, and its day markers ---------- */
+const lower = $('.lower');
+const spineDraw = $('#spinedraw');
+/* The markers belong on the spine, which is a child of .lower, not of the phase
+   that decides where each one sits. So they are parented to .lower and their
+   tops are measured off the phases on every layout change. */
+const dayMarks = [];
+$$('.phase[data-mark]').forEach(p => {
+  const add = (text, atEnd) => {
+    const m = document.createElement('span');
+    m.className = 'daymark';
+    m.textContent = text;
+    lower.appendChild(m);
+    dayMarks.push({ p, m, atEnd });
+    return m;
+  };
+  const marks = [add(p.dataset.mark, false)];
+  if (p.dataset.endmark) marks.push(add(p.dataset.endmark, true));
+  new IntersectionObserver(es => {
+    marks.forEach(m => m.classList.toggle('lit', es[0].isIntersecting));
+  }, { rootMargin: '-45% 0px -45% 0px' }).observe(p);
+});
+function placeDayMarks() {
+  const base = lower.getBoundingClientRect().top;
+  for (const { p, m, atEnd } of dayMarks) {
+    const r = p.getBoundingClientRect();
+    m.style.top = Math.round((atEnd ? r.bottom : r.top) - base - 6) + 'px';
+  }
+}
+placeDayMarks();
+addEventListener('resize', placeDayMarks);
+if (document.fonts) document.fonts.ready.then(placeDayMarks);
+
+let spineRaf = null;
+function drawSpine() {
+  spineRaf = null;
+  const r = lower.getBoundingClientRect();
+  const span = r.height - window.innerHeight * 0.5;
+  const p = clamp((window.innerHeight * 0.75 - r.top) / Math.max(1, span), 0, 1);
+  spineDraw.style.setProperty('--sp', p.toFixed(4));
+}
+function onPageScroll() { if (spineRaf === null) spineRaf = requestAnimationFrame(drawSpine); }
+addEventListener('scroll', onPageScroll, { passive: true });
+addEventListener('resize', onPageScroll);
+drawSpine();
+
+/* ---------- the canvas, the one interactive moment ---------- */
+{
+  const picks = { nature: null, vibe: null, culture: null };
+  const readouts = {};
+  $$('.readout').forEach(r => { readouts[r.dataset.for] = r; });
+
+  $$('.step').forEach(step => {
+    const key = step.dataset.step;
+    $$('.opt', step).forEach(btn => {
+      btn.addEventListener('click', () => {
+        $$('.opt', step).forEach(o => o.setAttribute('aria-pressed', 'false'));
+        btn.setAttribute('aria-pressed', 'true');
+        picks[key] = btn.dataset.v;
+        readouts[key].querySelector('dd').textContent = btn.dataset.v;
+        if (done) lightAll();
+      });
+    });
+  });
+
+  const hold = $('#hold');
+  const label = $('#holdlabel');
+  const dispatch = $('#dispatch');
+  let prog = 0, holding = false, holdRaf = null, done = false;
+
+  const message = () => {
+    const story = $('#story').value.trim();
+    return [
+      'Hello Rahul, here is my Concept and Culture Canvas.',
+      `Business nature: ${picks.nature || 'still deciding'}`,
+      `Brand vibe: ${picks.vibe || 'still deciding'}`,
+      `Operating culture: ${picks.culture || 'still deciding'}`,
+      story ? `About the brand: ${story}` : ''
+    ].filter(Boolean).join('\n');
+  };
+
+  function lightAll() {
+    Object.values(readouts).forEach((r, i) => setTimeout(() => r.classList.add('lit'), i * 220));
+    dispatch.classList.add('on');
+    dispatch.href = waLink(message());
+    dispatch.target = '_blank';
+    dispatch.rel = 'noopener';
+  }
+
+  function finish() {
+    done = true;
+    holding = false;
+    prog = 1;
+    hold.style.setProperty('--hd', 0);
+    hold.classList.add('done');
+    label.textContent = 'Blueprint commissioned';
+    lightAll();
+  }
+
+  function loop(now) {
+    holdRaf = null;
+    const dt = Math.min(64, now - (loop.last || now));
+    loop.last = now;
+    prog = clamp(prog + (holding ? dt / 1100 : -dt / 700), 0, 1);
+    hold.style.setProperty('--hd', (62.8 * (1 - prog)).toFixed(1));
+    if (prog >= 1) return finish();
+    if (prog > 0) holdRaf = requestAnimationFrame(loop);
+    else loop.last = 0;
+  }
+
+  const begin = e => {
+    if (done) return;
+    if (e.type === 'pointerdown') e.preventDefault();
+    holding = true;
+    loop.last = 0;
+    if (holdRaf === null) holdRaf = requestAnimationFrame(loop);
+  };
+  const release = () => { holding = false; if (!done && holdRaf === null && prog > 0) holdRaf = requestAnimationFrame(loop); };
+
+  hold.addEventListener('pointerdown', begin);
+  addEventListener('pointerup', release);
+  addEventListener('pointercancel', release);
+  hold.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); finish(); } });
+
+  // reduced motion gets the finished state with no hold required
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) finish();
+
+  $('#story').addEventListener('input', () => { if (done) { dispatch.href = waLink(message()); dispatch.target = '_blank'; dispatch.rel = 'noopener'; } });
+}
+
+/* ---------- the booking form ---------- */
+$('#bookform').addEventListener('submit', e => {
+  e.preventDefault();
+  const f = e.target;
+  const msg = [
+    'Hello Rahul, I would like to book a consultation.',
+    `Name: ${f.name.value.trim() || 'not given'}`,
+    `Phone: ${f.phone.value.trim() || 'not given'}`,
+    `City: ${f.city.value.trim() || 'not given'}`,
+    `Business type: ${f.type.value}`
+  ].join('\n');
+  $('#formok').classList.add('on');
+  window.open(waLink(msg), '_blank', 'noopener');
+});
+
+/* ---------- reduced motion, live in both directions ---------- */
+function pinToFinalStates() {
+  document.body.classList.add('pinned');
+  $$('.rev,.stagger,.drawline,.row,.beats').forEach(el => el.classList.add('in'));
+  $$('.stagger').forEach(el => el.classList.add('done'));
+  $$('.count').forEach(el => { el.textContent = el.dataset.to + (el.dataset.suffix || ''); });
+  spineDraw.style.setProperty('--sp', 1);
+  $$('.daymark').forEach(m => m.classList.add('lit'));
+}
+function unpinFinalStates() {
+  document.body.classList.remove('pinned');
+  spineDraw.style.setProperty('--sp', 0);
+  drawSpine();
+}
+matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', e => {
+  if (e.matches) pinToFinalStates(); else applyHeroMode();
+});
+
+/* ---------- pause everything on a hidden tab ---------- */
+document.addEventListener('visibilitychange', () => {
+  document.body.classList.toggle('paused', document.hidden);
+});
+
+applyHeroMode();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+# Raw generations and inspection frames never reach the repo or the live site
+review/
+
+# System noise
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
